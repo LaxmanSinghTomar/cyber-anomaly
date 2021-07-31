@@ -238,7 +238,7 @@ def predict_attack(
         # Dropping no info rows
         dataf = dataf[dataf['Src Port'] != 0]
         console.print(f"After filtering:{dataf.shape}", style= "bold orange_red1")
-        
+
         dataf.drop(
             config["COLS_TO_DROP"],
             axis=1,
@@ -266,8 +266,6 @@ def predict_attack(
             )
             dos_attack_counts = Counter(le2.inverse_transform(dos_pred))
             console.print(dos_attack_counts)
-        else:
-            pass
 
 
 if __name__ == "__main__":
